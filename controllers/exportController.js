@@ -35,6 +35,7 @@ exports.generateImage = async (req, res) => {
             }
         });
     } catch (error) {
-        res.status(500).send('An error occurred.');
+        console.error(error)
+        res.status(500).send('An error occurred.' + error.message);
     }
 };
