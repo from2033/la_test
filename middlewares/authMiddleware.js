@@ -9,7 +9,7 @@ exports.verifyApiKey = (req, res, next) => {
     const credentials = Buffer.from(base64Credentials, 'base64').toString('ascii');
     const [apiKey, password] = credentials.split(':');
 
-    if (apiKey === process.env.API_KEY && password === '') {
+    if (apiKey === process.env.API_KEY) {
         next();
     } else {
         res.status(401).send('Invalid API Key' + apiKey+','+process.env.API_KEY+','+password);
