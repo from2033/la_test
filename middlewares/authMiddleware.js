@@ -12,6 +12,6 @@ exports.verifyApiKey = (req, res, next) => {
     if (apiKey === process.env.API_KEY && password === '') {
         next();
     } else {
-        res.status(401).send('Invalid API Key:'+API_KEY);
+        res.status(401).send('Invalid API Key' + apiKey+','+process.env.API_KEY);
     }
 };
