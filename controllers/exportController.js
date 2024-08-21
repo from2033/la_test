@@ -31,7 +31,7 @@ exports.generateImage = async (req, res) => {
             if (err) {
                 res.status(500).send('Error sending image.');
             } else {
-                fs.unlinkSync(imagePath);
+               // fs.unlinkSync(imagePath);
             }
         });
     } catch (error) {
